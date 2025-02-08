@@ -212,41 +212,33 @@ with gr.Blocks(css="""
     .gr-button {background-color: #2563eb; color: white; border: none;}
     .gr-button:hover {background-color: #1d4ed8;}
 """) as interfaz:
-    gr.Markdown(
-        """
-        <div style="text-align: center;">
-            <h1>BIKE-SENTRY</h1>
-            <p>Obtén el clima actual y visualiza rutas detalladas entre ciudades</p>
-        </div>
-        """
-    )
+    gr.Markdown("<h1 style='text-align: center;'>🏍️ BIKE-SENTRY 🔒</h1><p style='text-align: center;'>🛡️ Tu asistente para seguridad y rutas en moto 🛣️</p>")
+
 
     with gr.Row():
         with gr.Column():
-            gr.Markdown("### Clima")
-            ciudad_input = gr.Textbox(label="Ciudad")
-            boton_clima = gr.Button("Consultar Clima")
-            clima_output = gr.Textbox(label="Clima")
-            temperatura_output = gr.Textbox(label="Temperatura")
-            humedad_output = gr.Textbox(label="Humedad")
-            viento_output = gr.Textbox(label="Viento")
-            
+            gr.Markdown("### 🌦️ Consulta el Clima en tu Ruta")
+            ciudad_input = gr.Textbox(label="📍 Ciudad", placeholder="Ingresa el nombre de la ciudad")
+            boton_clima = gr.Button("🔍 Consultar Clima")
+            clima_output = gr.Textbox(label="☁️ Estado del Clima")
+            temperatura_output = gr.Textbox(label="🌡️ Temperatura (°C)")
+            humedad_output = gr.Textbox(label="💧 Humedad (%)")
+            viento_output = gr.Textbox(label="🌬️ Velocidad del Viento (km/h)")
+
             boton_clima.click(obtener_clima, inputs=ciudad_input, outputs=[clima_output, temperatura_output, humedad_output, viento_output])
 
-            # Sección de Grabación y Transcripción debajo del clima
-            gr.Markdown("### Grabación y Transcripción")
-            boton_grabar = gr.Button("Grabar y Transcribir")
-            transcripcion_output = gr.Textbox(label="Texto Transcrito")
-            respuesta_output = gr.Textbox(label="Respuesta de IA")
+            gr.Markdown("### 🎤 Asistente de conducción")
+            boton_grabar = gr.Button("🎙️ Activar")
+            transcripcion_output = gr.Textbox(label="📝 Transcripción")
+            respuesta_output = gr.Textbox(label="🤖 Respuesta")
 
             boton_grabar.click(grabar_y_transcribir, inputs=[], outputs=[transcripcion_output, respuesta_output])
 
-
         with gr.Column():
-            gr.Markdown("### Generar Ruta")
-            origen_input = gr.Textbox(label="Ciudad de Origen")
-            destino_input = gr.Textbox(label="Ciudad de Destino")
-            boton_mapa = gr.Button("Generar Mapa")
+            gr.Markdown("### 🗺️ Planifica tu Ruta ")
+            origen_input = gr.Textbox(label="🏁 Ciudad de Origen", placeholder="Ej: Madrid")
+            destino_input = gr.Textbox(label="🎯 Ciudad de Destino", placeholder="Ej: Barcelona")
+            boton_mapa = gr.Button("🛣️ Generar Ruta Segura")
             
             # Mapa cargado por defecto sin ruta
             mapa_output = gr.HTML(value=mapa_inicial())
