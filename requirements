@@ -1,0 +1,12 @@
+gradio
+requests
+folium
+dotenv
+whisper
+pyaudio
+numpy
+subprocess
+torch
+threading
+llama_cpp
+
