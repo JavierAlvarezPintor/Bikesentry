@@ -1,0 +1,11 @@
+gradio==5.0.0
+requests==2.31.0
+folium==0.14.0
+dotenv==1.0.0
+whisper==1.1.10
+pyaudio==0.2.13
+numpy==1.24.3
+torch==2.0.1
+llama_cpp==0.2.10
+portaudio19-dev
+
