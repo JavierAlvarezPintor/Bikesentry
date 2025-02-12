@@ -23,7 +23,6 @@ cd bike-sentry
 ```bash
 python3 -m venv venv
 source venv/bin/activate  # En Linux/macOS
-venv\Scripts\activate     # En Windows
 ```
 
 ### **3️⃣ Instala las dependencias**
@@ -32,8 +31,7 @@ pip install -r requirements.txt
 ```
 
 > 📌 **Nota:** Si tienes problemas con `pyaudio`, instálalo manualmente:  
-> - **Linux**: `sudo apt install portaudio19-dev && pip install pyaudio`  
-> - **Windows**: Descarga el binario de https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio  
+> - **Linux**: `sudo apt install portaudio19-dev && pip install pyaudio`   
 > - **MacOS**: `brew install portaudio && pip install pyaudio`  
 
 ---
